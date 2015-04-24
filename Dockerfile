@@ -1,13 +1,15 @@
-From ubuntu:trusty
+From ubuntu:14.04
 MAINTAINER JAvier Jerónimo <jjeronimo@packageper.com>
 
-# sudo docker -e CREDENTIALS=... -e POSTFIX_ETC_HOSTNAME=... -e POSTFIX_ETC_DESTINATION=... -d packagepeer/postfix
+# HowTo build: sudo docker build --tag=packagepeer/postfix .
+# HowTo run: sudo docker -e POSTFIX_SASL_CREDENTIALS=... -e MY_DESTINATION=... -d packagepeer/postfix
 
+# ################################################################################ Setup
 RUN apt-get update && apt-get -yq install postfix libsasl2-modules
-
 
 ADD etc/mailname /etc/mailname
 ADD etc/postfix/main.cf /etc/postfix/main.cf
+
 
 
 ADD pkgp-run.sh /pkgp-run.sh
