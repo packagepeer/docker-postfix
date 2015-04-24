@@ -6,6 +6,7 @@ MAINTAINER JAvier Jerónimo <jjeronimo@packageper.com>
 RUN apt-get update && apt-get -yq install postfix libsasl2-modules
 
 
+ADD etc/mailname /etc/mailname
 ADD etc/postfix/main.cf /etc/postfix/main.cf
 
 
