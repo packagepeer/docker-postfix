@@ -1,5 +1,9 @@
 #!/bin/bash
 
+/etc/init.d/postfix stop
+kill $(ps -fea | grep "/usr/lib/postfix/master" | grep -v grep | awk '{print $2}')
+
+
 echo ${CREDENTIALS} > /etc/postfix/sasl_passwd
 postmap /etc/postfix/sasl_passwd
 rm /etc/postfix/sasl_passwd
