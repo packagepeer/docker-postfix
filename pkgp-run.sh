@@ -14,9 +14,7 @@ sed -i "s/%%%RELAY_SERVER%%%/${RELAY_SERVER}/g" /etc/postfix/main.cf
 
 
 
-touch /var/log/mail.log
-chown postfix:postfix /var/log/mail.log
-
+/etc/init.d/rsyslog start
 /etc/init.d/postfix start
 
-tail -f /var/log/mail.log
+tail -f /var/log/syslog.log | grep postfix
