@@ -18,5 +18,4 @@ RUN chmod u+x /pkgp-run.sh
 EXPOSE 25
 
 # ################################################################################ Entry point
-# From tutum/tomcat:7.0
 CMD ["/pkgp-run.sh"]
