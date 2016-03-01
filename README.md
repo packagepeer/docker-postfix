@@ -1,5 +1,7 @@
 # docker-postfix
 
+[![](https://badge.imagelayers.io/packagepeer/postfix:latest.svg)](https://imagelayers.io/?images=packagepeer/postfix:latest 'Get your own badge on imagelayers.io')
+
 FROM ubuntu:14.04
 
 Installs:
